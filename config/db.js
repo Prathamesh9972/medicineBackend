@@ -6,17 +6,13 @@ const connectDB = async () => {
         const conn = await mongoose.connect(process.env.MONGO_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            // Add retry mechanism for better reliability
             serverSelectionTimeoutMS: 5000,
-            // Add auto index creation
             autoIndex: true,
-            // Connection timeout
             connectTimeoutMS: 10000,
         });
 
         console.log(`MongoDB Connected: ${conn.connection.host}`);
         
-        // Add error handlers for the connection
         mongoose.connection.on('error', err => {
             console.error('MongoDB connection error:', err);
         });
