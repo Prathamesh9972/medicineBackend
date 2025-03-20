@@ -11,7 +11,7 @@ connectDB();
 
 // Enable CORS
 app.use(cors({
-    origin: 'http://localhost:5173', // Allow frontend to access backend
+    origin: 'http://mystaticwebsitehosting19.s3-website.ap-south-1.amazonaws.com', // Allow frontend to access backend
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
